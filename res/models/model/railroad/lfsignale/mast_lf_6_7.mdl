@@ -1,0 +1,35 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 3, 1, 2, },
+		bbMin = { -4, -1, 0, },
+	},
+	collider = {
+		params = {
+			
+		},
+		type = "MESH",
+	},
+	lods = {
+		{
+			node = {
+			children = {
+				{
+					materials = { "railroad/signaltafel/signaltafel.mtl", },
+					mesh = "railroad/signaltafel/pfosten_lod0.msh",
+					name = "Mast",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.01, 0, 0.1, 1, },
+				},
+			}, 
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+		},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 1500,
+		},
+	},
+	metadata = {},
+	version = 1,
+}
+end

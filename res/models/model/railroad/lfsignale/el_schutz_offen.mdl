@@ -1,0 +1,39 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 3, 1, 2, },
+		bbMin = { -4, -1, 0, },
+	},
+	collider = {
+		params = {
+			
+		},
+		type = "MESH",
+	},
+	lods = {
+		{
+			node = {
+			children = {
+				{
+					materials = { "railroad/lfsignale/mast.mtl", },
+					mesh = "railroad/lfsignale/el_verstellbar_lod0.msh",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.08, 0, 0.2, 1, },
+				},
+				{
+					materials = { "railroad/lfsignale/mast.mtl", },
+					mesh = "railroad/lfsignale/el_verstellbar_blende_lod0.msh",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.08, 0, 0.35, 1, },
+				},
+			}, 
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+		},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 1500,
+		},
+	},
+	metadata = {},
+	version = 1,
+}
+end

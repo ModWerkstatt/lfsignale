@@ -1,0 +1,478 @@
+﻿function data()
+return {
+	type = "ASSET_TRACK",
+	description = {
+		name = _("Lf-Signale"),
+		description = _("Lf_zusatzsignaltafeln_desc")
+	},
+	availability = {
+		yearFrom = 1850,
+		yearTo = 0,
+	},
+	buildMode = "MULTI",
+	categories = { "MW Signal Assets" },
+	order = 1,
+	skipCollision = true,
+	autoRemovable = false,
+
+	params = {
+		{
+			key = "signType",
+			name = _("Lf-Signal"),
+			uiType = "ICON_BUTTON",
+			values = { "ui/construction/parameters/lfsignale/lf6_11.tga", "ui/construction/parameters/lfsignale/lf7_11.tga",},
+			defaultIndex = 0,
+			tooltip = _("tooltip_lf_signal"),
+		},
+		{
+			key = "signalPosition",
+			name = _("Standort"),
+			values = { _("Rechts"), _("Links") },
+			defaultIndex = 0,
+			tooltip = _("tooltip_position"),
+		},
+		{
+			key = "kennziffer",
+			name = _("Geschwindigkeit in km/h"),
+			uiType = "COMBOBOX",
+			values = { "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150", "160" },
+			defaultIndex = 2,
+			tooltip = _("tooltip_speed"),
+		},
+		{
+			key = "gedreht",
+			name = _("gedrehtes Lf 6"),
+			values = { _("nein"), _("ja") },
+			defaultIndex = 0,
+			tooltip = _("tooltip_turned"),
+		},
+		{
+			key = "hoehe",
+			name = _("Höhe"),
+			values = { _("hoch"), _("standard"), _("gleishöhe"), _("boden") },
+			defaultIndex = 1,
+			tooltip = _("tooltip_height"),
+		},
+		{
+			key = "mast",
+			name = _("Mast"),
+			values = { _("nein"), _("ja") },
+			defaultIndex = 1,
+			tooltip = _("tooltip_pole"),
+		},
+		{
+			key = "pfR",
+			name = _("Zuordnungspfeil rechts"),
+			values = { "0", "1" },
+			defaultIndex = 0,
+			uiType = "CHECKBOX",
+			tooltip = _("tooltip_pfR"),
+		},
+		{
+			key = "pfL",
+			name = _("Zuordnungspfeil links"),
+			values = { "0", "1" },
+			defaultIndex = 0,
+			uiType = "CHECKBOX",
+			tooltip = _("tooltip_pfL"),
+		},
+		{
+			key = "licht",
+			name = _("beleuchtetes Lf6"),
+			values = { _("nein"), _("ja") },
+			defaultIndex = 0,
+			tooltip = _("tooltip_lighted"),
+		},
+		{
+			key = "signaldistanceLf",
+			name = _("Verschub für Signal Distance Mod"),
+			values = { _("nein"), _("ja") },
+			defaultIndex = 0,
+			tooltip = _("tooltip_distance"),
+		},
+		{
+			key = "zOffset",
+			name = _("Höhenanpassung"),
+			uiType = "SLIDER",
+			values = { "-50", "-49", "-48", "-47", "-46", "-45", "-44", "-43", "-42", "-41", "-40", "-39", "-38", "-37", "-36", "-35", "-34", "-33", "-32", "-31", "-30", "-29", "-28", "-27", "-26", "-25", "-24", "-23", "-22", "-21", "-20", "-19", "-18", "-17", "-16", "-15", "-14", _"-13", "-12", "-11", "-10", "-9", "-8", "-7", "-6", "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50" },
+			defaultIndex = 50,
+			tooltip = _("tooltip_heightadjust"),
+		},
+		{
+			key = "snappingType",
+			name = _("Snapping für Signale"),
+			values = { _("X"), _("H/V 48|51"), _("H/V 59"), _("H/V 69"), _("H/V Kompakt") },
+			defaultIndex = 0,
+			tooltip = _("tooltip_snapping"),
+		},
+		{
+			key = "snappingHoehe",
+			name = _("ca. Masthöhe für Signalsnapping"),
+			values = { _("4 m"), _("5 m"), _("5,5 m"), _("6,5 m"), _("8 m") },
+			defaultIndex = 0,
+			tooltip = _("tooltip_snapping_height"),
+		},
+	},
+
+	updateFn = function(params)
+		local result = { }
+		result.models = { }
+		result.groundFaces = { }
+
+		local xPosition = 0
+		local zPosition = 0
+		local zPositionOffset1 = 0
+		local zPositionOffset2 = 0
+		local zPositionLf = 0
+		local zPositionSignal = 0
+		local yPosition = 0
+		local yPositionLf = 0
+		local speedNumber = 0
+		local signalDistanceLf = 0
+		local rotationValue = ""
+		local LfValue = ""
+
+		if params.kennziffer == 0 then
+			kzNumber = "10"
+		else
+			kzNumber = tostring(params.kennziffer * 10 + 10)
+		end
+
+
+
+--[[	if params.zOffset == 0 then
+		zPositionOffset = -4
+	elseif params.zOffset == 1 then
+		zPositionOffset = -3.92
+	elseif params.zOffset == 2 then
+		zPositionOffset = -3.84
+	elseif params.zOffset == 3 then
+		zPositionOffset = -3.76
+	elseif params.zOffset == 4 then
+		zPositionOffset = -3.68
+	elseif params.zOffset == 5 then
+		zPositionOffset = -3.6
+	elseif params.zOffset == 6 then
+		zPositionOffset = -3.52
+	elseif params.zOffset == 7 then
+		zPositionOffset = -3.44
+	elseif params.zOffset == 8 then
+		zPositionOffset = -3.36
+	elseif params.zOffset == 8 then
+	end]]
+
+
+
+		if params.zOffset == 50 then
+			zPositionOffset2 = "0"
+		else
+			zPositionOffset2 = tostring((params.zOffset - 50)*0.08)
+		end
+
+	--	zPositionOffset2 = zPositionOffset1
+
+
+	if params.signType == 0 then
+		if params.snappingType == 0 then
+			if params.hoehe == 0 then
+				zPosition = 0.4
+			elseif params.hoehe == 1 then
+				zPosition = 0
+			elseif params.hoehe == 2 then
+				if params.gedreht == 0 then
+				zPosition = -1.05
+				else
+				zPosition = -1.05
+				end
+			elseif params.hoehe == 3 then
+				if params.gedreht == 0 then
+				zPosition = -1.25
+				else
+				zPosition = -1.25
+				end
+			end
+		elseif params.snappingType == 1 then
+			zPosition = 0
+			xPosition = 0.075
+			if params.signalPosition == 0 then
+				yPositionLf = 0.1
+				else
+				yPositionLf = -0.1
+				end
+			if params.snappingHoehe == 0 then
+				zPositionSignal = 0.65
+			elseif params.snappingHoehe == 1 then
+				zPositionSignal = 1.2
+			elseif params.snappingHoehe == 2 then
+				zPositionSignal = 1.5
+			elseif params.snappingHoehe == 3 then
+				zPositionSignal = 1.6
+			elseif params.snappingHoehe == 4 then
+				zPositionSignal = 2.8
+			end
+		elseif params.snappingType == 2 then
+			zPosition = 0
+			xPosition = 0.075
+			if params.signalPosition == 0 then
+				yPositionLf = 0.1
+				else
+				yPositionLf = -0.1
+				end
+			if params.snappingHoehe == 0 then
+				zPositionSignal = 0.65
+			elseif params.snappingHoehe == 1 then
+				zPositionSignal = 1.2
+			elseif params.snappingHoehe == 2 then
+				zPositionSignal = 1.5
+			elseif params.snappingHoehe == 3 then
+				zPositionSignal = 1.6
+			elseif params.snappingHoehe == 4 then
+				zPositionSignal = 2.8
+			end
+		elseif params.snappingType == 3 then
+			zPosition = 0
+			xPosition = 0.075
+			if params.signalPosition == 0 then
+				yPositionLf = 0.05
+				else
+				yPositionLf = -0.05
+				end
+			if params.snappingHoehe == 0 then
+				zPositionSignal = 1.1
+			elseif params.snappingHoehe == 1 then
+				zPositionSignal = 2.2
+			elseif params.snappingHoehe == 2 then
+				zPositionSignal = 1.9
+			elseif params.snappingHoehe == 3 then
+				zPositionSignal = 2.1
+			elseif params.snappingHoehe == 4 then
+				zPositionSignal = 1.7
+			end
+		elseif params.snappingType == 4 then
+			zPosition = 0
+			xPosition = 0.15
+			yPositionLf = 0.4
+			if params.snappingHoehe == 0 then
+				zPositionSignal = -0.4
+			elseif params.snappingHoehe == 1 then
+				zPositionSignal = 1.65
+			elseif params.snappingHoehe == 2 then
+				zPositionSignal = 2.10
+			elseif params.snappingHoehe == 3 then
+				zPositionSignal = 1.7
+			elseif params.snappingHoehe == 4 then
+				zPositionSignal = 1.7
+			end
+		end
+
+	elseif params.signType == 1 then
+		if params.snappingType == 0 then
+			if params.hoehe == 0 then
+				zPosition = 0.4
+			elseif params.hoehe == 1 then
+				zPosition = 0
+			elseif params.hoehe == 2 then
+				if params.gedreht == 0 then
+				zPosition = -1.25
+				else
+				zPosition = -1.25
+				end
+			elseif params.hoehe == 3 then
+				if params.gedreht == 0 then
+				zPosition = -1.65
+				else
+				zPosition = -1.65
+				end
+			end
+		elseif params.snappingType == 1 then
+			zPosition = 0
+			xPosition = 0.075
+			if params.signalPosition == 0 then
+				yPositionLf = 0.1
+				else
+				yPositionLf = -0.1
+				end
+			if params.snappingHoehe == 0 then
+				zPositionSignal = 0.65
+			elseif params.snappingHoehe == 1 then
+				zPositionSignal = 1.2
+			elseif params.snappingHoehe == 2 then
+				zPositionSignal = 1.5
+			elseif params.snappingHoehe == 3 then
+				zPositionSignal = 1.6
+			elseif params.snappingHoehe == 4 then
+				zPositionSignal = 2.8
+			end
+		elseif params.snappingType == 2 then
+			zPosition = 0
+			xPosition = 0.075
+			if params.signalPosition == 0 then
+				yPositionLf = 0.1
+				else
+				yPositionLf = -0.1
+				end
+			if params.snappingHoehe == 0 then
+				zPositionSignal = 0.65
+			elseif params.snappingHoehe == 1 then
+				zPositionSignal = 1.2
+			elseif params.snappingHoehe == 2 then
+				zPositionSignal = 1.5
+			elseif params.snappingHoehe == 3 then
+				zPositionSignal = 1.6
+			elseif params.snappingHoehe == 4 then
+				zPositionSignal = 2.8
+			end
+		elseif params.snappingType == 3 then
+			zPosition = 0
+			xPosition = 0.075
+			if params.signalPosition == 0 then
+				yPositionLf = 0.05
+				else
+				yPositionLf = -0.05
+				end
+			if params.snappingHoehe == 0 then
+				zPositionSignal = 1.1
+			elseif params.snappingHoehe == 1 then
+				zPositionSignal = 2.1
+			elseif params.snappingHoehe == 2 then
+				zPositionSignal = 1.6
+			elseif params.snappingHoehe == 3 then
+				zPositionSignal = 2.1
+			elseif params.snappingHoehe == 4 then
+				zPositionSignal = 1.7
+			end
+		elseif params.snappingType == 4 then
+			zPosition = 0
+			xPosition = 0.15
+			yPositionLf = 0.4
+			if params.snappingHoehe == 0 then
+				zPositionSignal = -0.4
+			elseif params.snappingHoehe == 1 then
+				zPositionSignal = 1.65
+			elseif params.snappingHoehe == 2 then
+				zPositionSignal = 2.10
+			elseif params.snappingHoehe == 3 then
+				zPositionSignal = 1.7
+			elseif params.snappingHoehe == 4 then
+				zPositionSignal = 1.7
+			end
+		end
+	end
+
+
+		if params.signaldistanceLf == 0 then
+			signalDistanceLf = 0.01
+		elseif params.signaldistanceLf == 1 then
+			signalDistanceLf = -7.988
+		end
+
+
+		if params.signalPosition == 0 then
+			if params.licht == 0 then
+				yPosition = 2.15
+			else
+				yPosition = 0
+			end
+		elseif params.signalPosition == 1 then
+			if params.licht == 0 then
+				yPosition = -2.05
+			else
+				yPosition = -4.2
+			end
+		end
+
+
+
+		if params.signType == 0 then
+			LfValue = "6"
+		else
+			LfValue = "7"
+		end
+
+
+		if params.signType == 0 then
+			if params.licht == 0 then
+				if params.gedreht == 0 then
+					rotationValue = "_unten"
+				else
+					rotationValue = ""
+					zPositionLf = -0.2
+				end
+			else
+				rotationValue = "_licht"
+			end
+		end
+
+		if params.mast == 1 then
+			if params.snappingType == 0 then
+				if params.licht == 0 then
+					result.models[#result.models+1] = {
+							id = "railroad/lfsignale/mast_lf_6_7.mdl",
+							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf, yPosition-0.05, 0.4+zPosition+zPositionOffset2, 1 },
+						}
+				else
+				end
+			end
+		end
+
+
+				if params.licht == 1 then
+					result.models[#result.models+1] = {
+							id = "railroad/lfsignale/mast_licht.mdl",
+							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf, yPosition+2.1, 0.4, 1 },
+						}
+				end
+
+
+
+		if params.licht == 0 then
+			result.models[#result.models+1] = {
+					id = "railroad/lfsignale/lf_"..LfValue.."_kz_"..kzNumber..""..rotationValue..".mdl",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition, yPosition+yPositionLf-0.05, 0.5+zPosition+zPositionSignal+zPositionLf+zPositionOffset2, 1 },
+				}
+		elseif params.licht == 1 then
+			result.models[#result.models+1] = {
+					id = "railroad/lfsignale/lf_"..LfValue.."_kz_"..kzNumber..""..rotationValue..".mdl",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf, yPosition+2.1, 0.39, 1 },
+				}
+		end
+
+		if params.pfR == 1 then
+			if params.pfL == 0 then
+				result.models[#result.models+1] = {
+						id = "railroad/lfsignale/pfeil_re.mdl",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition+0.09, yPosition+yPositionLf-0.05+2.155, 0.5+zPosition+zPositionSignal+zPositionLf+zPositionOffset2+0.16, 1 },
+					}
+			elseif params.pfL == 1 then
+				result.models[#result.models+1] = {
+						id = "railroad/lfsignale/pfeil_re.mdl",
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition+0.09, yPosition+yPositionLf-0.05+2.155, 0.5+zPosition+zPositionSignal+zPositionLf+zPositionOffset2+0.16+0.18, 1 },
+					}
+			end
+		end
+
+		if params.pfL == 1 then
+			result.models[#result.models+1] = {
+					id = "railroad/lfsignale/pfeil_li.mdl",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition+0.09, yPosition+yPositionLf-0.05+2.155, 0.5+zPosition+zPositionSignal+zPositionLf+zPositionOffset2+0.16, 1 },
+				}
+		end
+
+
+
+
+
+		result.groundFaces[1] = { face = { {0.01, -0.01}, { 0.01, 0.01}, {-0.01, 0.01}, {-0.01, -0.01} }, modes = { { type = "FILL", key = "industry_floor.lua" } } }
+
+		result.terrainAlignmentLists = {
+            {
+    			type = "EQUAL",
+    			faces =  { },
+    		},
+        }
+
+		return result
+	end
+}
+
+end

@@ -1,0 +1,35 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 3, 1, 2, },
+		bbMin = { -4, -1, 0, },
+	},
+	collider = {
+		params = {
+			halfExtents = { 3.5, 1, 1, },
+		},
+		transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.5, 0, 1, 1, },
+		type = "BOX",
+	},
+	lods = {
+		{
+			node = {
+				children = {
+					{
+						materials = { "railroad/lfsignale/el_tafeln.mtl", },
+						mesh = "railroad/lfsignale/einfachpfeil_lod0.msh",
+						transf = { 1, 0, -0, 0, 0, -1, -8.7422776573476e-08, 0, -0, 8.7422776573476e-08, -1, 0, 0.079999998211861, 0, 2, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 1500,
+		},
+	},
+	metadata = { },
+	version = 1,
+}
+end

@@ -1,0 +1,51 @@
+function data()
+return {
+	boundingInfo = {
+		bbMax = { 0.51999998092651, 3, 3, },
+		bbMin = { -0.46999999880791, -3.2999999523163, -1.7200000286102, },
+	},
+	collider = {
+		params = {
+			halfExtents = { 0.49599999189377, 1.1770000457764, 4.8699998855591, },
+		},
+		transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.023000000044703, -1.1770000457764, 3.1480000019073, 1, },
+		type = "BOX",
+	},
+	lods = {
+		{
+			node = {
+				children = {
+					{
+						materials = { "railroad/signaltafel/signaltafel.mtl", },
+						mesh = "railroad/signaltafel/pfeil_rechts_lod0.msh",
+						name = "Mast",
+						transf = { -1, -8.7422776573476e-08, 0, 0, 8.7422776573476e-08, -1, 0, 0, 0, 0, 1, 0, -0.054999999701977, 0, 0.23000000417233, 1, },
+					},
+				},
+				name = "RootNode",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2.1500000953674, -0.15000000596046, 1, },
+			},
+			static = false,
+			visibleFrom = 0,
+			visibleTo = 1500,
+		},
+	},
+	metadata = {
+		availability = {
+			yearFrom = 1930,
+			yearTo = 0,
+		},
+		cost = {
+			price = 5000,
+			priceScale = 1,
+		},
+		komponenten = {
+			assets = true,
+			ls = false,
+			zs2Zs2v = false,
+			zs3Zs3v = false,
+		},
+	},
+	version = 1,
+}
+end
