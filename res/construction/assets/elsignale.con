@@ -6,7 +6,7 @@ return {
 		description = _("El_zusatzsignaltafeln_desc")
 	},
 	availability = {
-		yearFrom = 1850,
+		yearFrom = 1910,
 		yearTo = 0,
 	},
 	buildMode = "MULTI",
