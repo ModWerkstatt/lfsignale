@@ -25,6 +25,13 @@ return {
 			tooltip = _("tooltip_el_signal"),
 		},
 		{
+			key = "signalPosition",
+			name = _("Standort"),
+			values = { _("rechts"), _("links") },
+			defaultIndex = 0,
+			tooltip = _("tooltip_position"),
+		},
+		{
 			key = "version",
 			name = _("Version"),
 			values = { _("alt"), _("neu") },
