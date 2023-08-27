@@ -38,7 +38,7 @@ return {
         ["6,5 m"] = "6.5 m",
         ["8 m"] = "8 m",
 
-        ["tooltip_el_signal"] = "Selection of El signals",
+        ["tooltip_el_signal"] = "Selection of El signals as static asset. Entry marked as \"dynamisch\" has a built-in animation to trigger the signal time based (not train based)",
         ["tooltip_version"] = "Selection of version",
         ["tooltip_height"] = "Selection of the height reference point",
         ["tooltip_pole"] = "With pole or without?",
@@ -118,7 +118,7 @@ return {
         ["6,5 m"] = "6,5 m",
         ["8 m"] = "8 m",
 
-        ["tooltip_el_signal"] = "Auswahl El-Signals",
+        ["tooltip_el_signal"] = "Auswahl El-Signals als statische Assets. Eintrag mit \"dynamisch\" schaltet das Signal um als zeitgesteuerte Animation (nicht zugbeeinflusst)",
         ["tooltip_version"] = "Versionsauswahl",
         ["tooltip_height"] = "Auswahl des Referenzpunktes der Höhe",
         ["tooltip_pole"] = "Mit Mast oder ohne?",
