@@ -25,7 +25,7 @@ return {
 							animations = { 
 								Scene = { 
 									params = { 
-										id = "/railroad/lfsignale/el_verstellbar.ani",
+										id = "ani/el_verstellbar.ani",
 									},
 									type = "FILE_REF",
 								},
