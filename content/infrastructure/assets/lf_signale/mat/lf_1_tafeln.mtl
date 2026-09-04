@@ -30,7 +30,7 @@ return {
 			map_normal = { 
 				fragmentSamplers = { 
 					normalTex = { 
-						fileName = "tex/lf_1_schild_normal.dds",
+						fileName = "tex/lf_1_normal.dds",
 						redGreen = true,
 						type = "TWOD",
 					},
