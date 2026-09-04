@@ -6,7 +6,7 @@ return {
 			light_receiver = { 
 				fragmentProperties = {
 					{ 
-						isLegacyMaterial = true,
+						isLegacyMaterial = false,
 						lightMask = 2,
 					},
 				},
@@ -46,13 +46,6 @@ return {
 				fragmentProperties = {
 					{ 
 						texCoordScale = 1,
-					},
-				},
-			},
-			two_sided = { 
-				fragmentProperties = {
-					{ 
-						flipNormal = false,
 					},
 				},
 			},

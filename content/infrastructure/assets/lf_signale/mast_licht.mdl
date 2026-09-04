@@ -16,14 +16,14 @@ return {
 				node = { 
 					children = {
 						{ 
-							materials = { "/railroad/lfsignale/mat/mast.mtl", },
-							mesh = "/railroad/lfsignale/msh/lf_beleuchtet_lod0.msh",
+							materials = { "mat/mast.mtl", },
+							mesh = "msh/lf_beleuchtet_lod0.msh",
 							name = "lf_beleuchtet_lod0_1",
 							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0.3, 1, },
 						},
 						{ 
-							materials = { "/railroad/lfsignale/mat/glas.mtl", },
-							mesh = "/railroad/lfsignale/msh/lf_6_kz_10_licht_lod0.msh",
+							materials = { "mat/glas.mtl", },
+							mesh = "msh/lf_6_kz_10_licht_lod0.msh",
 							name = "lf_6_kz_10_licht_lod0_2",
 							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.2, 0, 3.13, 1, },
 						},

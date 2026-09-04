@@ -16,8 +16,8 @@ return {
 				node = { 
 					children = {
 						{ 
-							materials = { "/railroad/lfsignale/mat/lf_1_tafeln.mtl", },
-							mesh = "/railroad/lfsignale/msh/bausperre_eckig_lod0.msh",
+							materials = { "mat/lf_1_tafeln.mtl", },
+							mesh = "msh/bausperre_eckig_lod0.msh",
 							name = "bausperre_eckig_lod0_1",
 							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.08, 0, 0, 1, },
 						},

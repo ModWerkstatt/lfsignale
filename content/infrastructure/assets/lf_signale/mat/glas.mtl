@@ -13,7 +13,7 @@ return {
 			light_receiver = { 
 				fragmentProperties = {
 					{ 
-						isLegacyMaterial = true,
+						isLegacyMaterial = false,
 						lightMask = 2,
 					},
 				},
@@ -31,13 +31,6 @@ return {
 					{ 
 						factor = -1,
 						units = -1,
-					},
-				},
-			},
-			two_sided = { 
-				fragmentProperties = {
-					{ 
-						flipNormal = false,
 					},
 				},
 			},

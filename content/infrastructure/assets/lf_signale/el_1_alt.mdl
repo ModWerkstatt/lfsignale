@@ -16,8 +16,8 @@ return {
 				node = { 
 					children = {
 						{ 
-							materials = { "/railroad/lfsignale/mat/el_tafeln.mtl", },
-							mesh = "/railroad/lfsignale/msh/el_1_alt_lod0.msh",
+							materials = { "mat/el_tafeln.mtl", },
+							mesh = "msh/el_1_alt_lod0.msh",
 							name = "el_1_alt_lod0_1",
 							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.08, 0, 2, 1, },
 						},
