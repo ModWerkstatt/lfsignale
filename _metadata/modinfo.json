@@ -1,0 +1,22 @@
+{
+    "name": "Lf and El signals",
+    "summary": "In this mod, signs are placed along the tracks for train traffic. The signs are available as assets.",
+    "description": "Lf signals are reflective panels that are set up at temporary slow-moving zones. El signals instruct the engine driver of electrically powered vehicles on how to behave at this signal.",
+    "localization" : {
+        "de": {
+            "name": "Lf- und El-Signale",
+            "summary": "In diesem Mod sind Tafeln die an der Strecke aufgestellt werden für den Zugverkehr. Die Tafel sind als Assets verfügbar.",
+            "description": "Lf-Signale sind rückstrahlende Tafeln, die bei vorübergehenden Langsamfahrstellen aufstellt werden. El-Signale weisen den Lokführer elektrisch betriebener Fahrzeuge an, wie er sich an diesem Signal verhalten muss."
+        }
+    },
+    "authors": [
+        {
+            "name": "Modwerkstatt",
+            "role": "CREATOR"
+        }
+    ],
+    "tags": [
+        "Signal"
+    ],
+    "url": "https://modwerkstatt.com/downloads/tpf3/lfsignale"
+}

@@ -1,0 +1,47 @@
+function data()
+return { 
+		__version = "",
+		order = 0,
+		params = { 
+			emissive_scale = { 
+				fragmentProperties = {
+					{ 
+						emissiveScale = { 3.8, 1.8, 1.8, },
+					},
+				},
+			},
+			light_receiver = { 
+				fragmentProperties = {
+					{ 
+						isLegacyMaterial = true,
+						lightMask = 2,
+					},
+				},
+			},
+			map_emissive = { 
+				fragmentSamplers = { 
+					emissiveTex = { 
+						fileName = "tex/lf_transparent_albedo.dds",
+						type = "TWOD",
+					},
+				},
+			},
+			polygon_offset = { 
+				fragmentProperties = {
+					{ 
+						factor = -1,
+						units = -1,
+					},
+				},
+			},
+			two_sided = { 
+				fragmentProperties = {
+					{ 
+						flipNormal = false,
+					},
+				},
+			},
+		},
+		type = "EMISSIVE",
+	}
+end
