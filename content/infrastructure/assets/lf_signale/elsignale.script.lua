@@ -19,89 +19,6 @@ return {
 		local ElValue = ""
 
 
-		if params.mw_offset_z == 51 then
-			zPositionOffset2 = "0"
-		else
-			zPositionOffset2 = tostring((params.mw_offset_z - 51)*0.08)
-		end
-
-
-		if params.mw_snapping_type == 2 then
-			xPosition = 0.095
-			if params.mw_signal_position == 1 then
-				yPositionEl = 0.1
-				else
-				yPositionEl = -0.1
-				end
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = 0.75
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 1.2
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 1.8
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 2.1
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 2.9
-			end
-		elseif params.mw_snapping_type == 3 then
-			xPosition = 0.095
-			if params.mw_signal_position == 1 then
-				yPositionEl = 0.1
-				else
-				yPositionEl = -0.1
-				end
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = 0.75
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 1.2
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 1.8
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 2.1
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 2.9
-			end
-		elseif params.mw_snapping_type == 4 then
-			xPosition = 0.095
-			if params.mw_signal_position == 1 then
-				yPositionEl = 0.05
-				else
-				yPositionEl = -0.05
-				end
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = 0.4
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 1.0
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 1.85
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 2
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 2
-			end
-		elseif params.mw_snapping_type == 5 then
-			xPosition = 0.15
-			if params.mw_signal_position == 1 then
-				yPositionEl = 0.4
-				else
-				yPositionEl = -0.4
-				end
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = -0.2
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 1.75
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 2.30
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 1.7
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 1.7
-			end
-		end
-
-
-
 		if params.signaldistanceEl == 1 then
 			signalDistanceEl = 0.01
 		elseif params.signaldistanceEl == 2 then
@@ -150,101 +67,98 @@ return {
 		end
 
 
-		if params.mw_version == 1 then
+		if params.mw_version == 2 then
 			versionValue = "_alt"
-		elseif params.mw_version == 2 then
-			versionValue = ""
-		end
-	if params.mw_sign_type <= 10 then
-		if params.mw_mast == 2 then
-			if params.mw_snapping_type == 1 then
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "mast_lf_6_7.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl+xPosition, yPosition, 0.4+zPosition+zPositionOffset2, 1 },
-				}
-			end
 		end
 
 
-		if params.mw_pfeil == 2 then
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_pfeil_l.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
-				}
-		elseif params.mw_pfeil == 3 then
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_pfeil_r.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
-				}
-		elseif params.mw_pfeil == 4 then
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_pfeildoppelt.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
-				}
-		elseif params.mw_pfeil == 5 then
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_pfeil_g.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
-				}
-		end
+	    if params.mw_sign_type <= 10 then
+		    if params.mw_pfeil == 2 then
+			    subconstruction.models[#subconstruction.models+1] = {
+					    id = "el_pfeil_l.mdl",
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
+				    }
+		    elseif params.mw_pfeil == 3 then
+			    subconstruction.models[#subconstruction.models+1] = {
+					    id = "el_pfeil_r.mdl",
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
+				    }
+		    elseif params.mw_pfeil == 4 then
+			    subconstruction.models[#subconstruction.models+1] = {
+					    id = "el_pfeildoppelt.mdl",
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
+				    }
+		    elseif params.mw_pfeil == 5 then
+			    subconstruction.models[#subconstruction.models+1] = {
+					    id = "el_pfeil_g.mdl",
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
+				    }
+		    end
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "el_"..ElValue..""..versionValue..".mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2, 1 },
 				}
-	elseif params.mw_sign_type == 11 then
-		if params.mw_signal_position == 1 then
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_schutz_offen.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, 2.5, 0.5+0.4, 1 },
-				}
-		else
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_schutz_offen.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5+0.4, 1 },
-				}
-		end
-	elseif params.mw_sign_type == 12 then
-		if params.mw_signal_position == 1 then
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_schutz_zu.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, 2.5, 0.5+0.4, 1 },
-				}
-		else
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_schutz_zu.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5+0.4, 1 },
-				}
-		end
-	elseif params.mw_sign_type == 13 then
-		if params.mw_signal_position == 1 then
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_schutz.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, 2.5, 0.5+0.4, 1 },
-				}
-		else
-			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_schutz.mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5+0.4, 1 },
-				}
-		end
-	end
+	    elseif params.mw_sign_type == 11 then
+		    if params.mw_signal_position == 1 then
+			    subconstruction.models[#subconstruction.models+1] = {
+					    id = "el_schutz_offen.mdl",
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, 2.5, 0.5+0.4, 1 },
+				    }
+		    else
+			    subconstruction.models[#subconstruction.models+1] = {
+					    id = "el_schutz_offen.mdl",
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5+0.4, 1 },
+				    }
+		    end
+	    elseif params.mw_sign_type == 12 then
+		    if params.mw_signal_position == 1 then
+			    subconstruction.models[#subconstruction.models+1] = {
+					    id = "el_schutz_zu.mdl",
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, 2.5, 0.5+0.4, 1 },
+				    }
+		    else
+			    subconstruction.models[#subconstruction.models+1] = {
+					    id = "el_schutz_zu.mdl",
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5+0.4, 1 },
+				    }
+		    end
+	    elseif params.mw_sign_type == 13 then
+		    if params.mw_signal_position == 1 then
+			    subconstruction.models[#subconstruction.models+1] = {
+					    id = "el_schutz.mdl",
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, 2.5, 0.5+0.4, 1 },
+				    }
+		    else
+			    subconstruction.models[#subconstruction.models+1] = {
+					    id = "el_schutz.mdl",
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5+0.4, 1 },
+				    }
+		    end
+	    end
 
-	subconstruction.terrainAlignmentLists = {
-         {
-            type = "EQUAL",
-      		faces =  { }
+        if params.mw_mast == 2 then
+            subconstruction.models[#subconstruction.models+1] = {
+			    id = "mast_lf_6_7.mdl",
+			    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl+xPosition, yPosition, 0.4+zPosition+zPositionOffset2, 1 },
+		    }
+        end
+
+	    subconstruction.terrainAlignmentLists = {
+            {
+                type = "EQUAL",
+          		faces =  { }
 			}
 		}
 
-      result.snapPoint = {
-          transportModes = { "TRAIN", "ELECTRIC_TRAIN" },
-          allowSnapToBaseEdgeEnds = true,
-          allowSnapToMesh = true,
-      }
+        result.snapPoint = {
+            transportModes = { "TRAIN", "ELECTRIC_TRAIN" },
+            allowSnapToBaseEdgeEnds = true,
+            allowSnapToMesh = true,
+        }
 
-      result.subconstructions = {
-	      subconstruction
-      }
+        result.subconstructions = {
+	        subconstruction
+        }
 
 		return result
 	end
