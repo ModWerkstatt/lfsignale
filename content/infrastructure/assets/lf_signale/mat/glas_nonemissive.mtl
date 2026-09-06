@@ -6,9 +6,9 @@ return {
 			emissive_scale = {
 				fragmentProperties = {
 					{
-						emissiveScale = { 1, 0.5, 0.5, },
-                        fromTime = 20,
-                        toTime = 6,
+						emissiveScale = { 2, 1, 1, },
+                        fromTime = 6,
+                        toTime = 20,
 					},
 				},
 			},
@@ -20,10 +20,18 @@ return {
 					},
 				},
 			},
-			map_emissive = {
+			map_albedo = {
 				fragmentSamplers = {
-					emissiveTex = {
+					albedoTex = {
 						fileName = "tex/lf_transparent_albedo.dds",
+						type = "TWOD",
+					},
+				},
+			},
+			map_metal_gloss_ao = {
+				fragmentSamplers = {
+					metalGlossAoTex = {
+						fileName = "::/placeholders/mat/tex/default_metal_gloss_ao.dds",
 						type = "TWOD",
 					},
 				},
@@ -37,6 +45,6 @@ return {
 				},
 			},
 		},
-		type = "EMISSIVE",
+		type = "PHYSICAL",
 	}
 end
