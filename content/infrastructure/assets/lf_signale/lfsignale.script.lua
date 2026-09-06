@@ -20,200 +20,6 @@ return {
 
 		local kzNumber = tostring(params.mw_kennziffer * 10)
 
-		if params.mw_offset_z == 50 then
-			zPositionOffset2 = "0"
-		else
-			zPositionOffset2 = tostring((params.mw_offset_z - 51)*0.08)
-		end
-
-
-	if params.mw_sign_type == 1 then
-		if params.mw_snapping_type == 1 then
-			if params.mw_hoehe == 1 then
-				zPosition = 0.4
-			elseif params.mw_hoehe == 1 then
-				zPosition = 0
-			elseif params.mw_hoehe == 2 then
-				if params.mw_gedreht == 0 then
-				zPosition = -1.05
-				else
-				zPosition = -1.05
-				end
-			elseif params.mw_hoehe == 3 then
-				if params.mw_gedreht == 0 then
-				zPosition = -1.25
-				else
-				zPosition = -1.25
-				end
-			end
-		elseif params.mw_snapping_type == 1 then
-			zPosition = 0
-			xPosition = 0.075
-			if params.mw_signal_position == 0 then
-				yPositionLf = 0.1
-				else
-				yPositionLf = -0.1
-				end
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = 0.65
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 1.2
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 1.5
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 1.6
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 2.8
-			end
-		elseif params.mw_snapping_type == 2 then
-			zPosition = 0
-			xPosition = 0.075
-			if params.mw_signal_position == 1 then
-				yPositionLf = 0.1
-				else
-				yPositionLf = -0.1
-				end
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = 0.65
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 1.2
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 1.5
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 1.6
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 2.8
-			end
-		elseif params.mw_snapping_type == 4 then
-			zPosition = 0
-			xPosition = 0.075
-			if params.mw_signal_position == 1 then
-				yPositionLf = 0.05
-				else
-				yPositionLf = -0.05
-				end
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = 1.1
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 2.2
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 1.9
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 2.1
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 1.7
-			end
-		elseif params.mw_snapping_type == 5 then
-			zPosition = 0
-			xPosition = 0.15
-			yPositionLf = 0.4
-			if params.mw_snapping_hoehe == 01 then
-				zPositionSignal = -0.4
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 1.65
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 2.10
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 1.7
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 1.7
-			end
-		end
-
-	elseif params.mw_sign_type == 2 then
-		if params.mw_snapping_type == 1 then
-			if params.mw_hoehe == 1 then
-				zPosition = 0.4
-			elseif params.mw_hoehe == 2 then
-				zPosition = 0
-			elseif params.mw_hoehe == 3then
-				if params.mw_gedreht == 1 then
-				zPosition = -1.25
-				else
-				zPosition = -1.25
-				end
-			elseif params.mw_hoehe == 4 then
-				if params.mw_gedreht == 1 then
-				zPosition = -1.65
-				else
-				zPosition = -1.65
-				end
-			end
-		elseif params.mw_snapping_type == 2 then
-			zPosition = 0
-			xPosition = 0.075
-			if params.mw_signal_position == 1 then
-				yPositionLf = 0.1
-				else
-				yPositionLf = -0.1
-				end
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = 0.65
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 1.2
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 1.5
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 1.6
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 2.8
-			end
-		elseif params.mw_snapping_type == 4 then
-			zPosition = 0
-			xPosition = 0.075
-			if params.mw_signal_position == 1 then
-				yPositionLf = 0.1
-				else
-				yPositionLf = -0.1
-				end
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = 0.65
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 1.2
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 1.5
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 1.6
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 2.8
-			end
-		elseif params.mw_snapping_type == 4 then
-			zPosition = 0
-			xPosition = 0.075
-			if params.mw_signal_position == 1 then
-				yPositionLf = 0.05
-				else
-				yPositionLf = -0.05
-				end
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = 1.1
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 2.1
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 1.6
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 2.1
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 1.7
-			end
-		elseif params.mw_snapping_type == 5 then
-			zPosition = 0
-			xPosition = 0.15
-			yPositionLf = 0.4
-			if params.mw_snapping_hoehe == 1 then
-				zPositionSignal = -0.4
-			elseif params.mw_snapping_hoehe == 2 then
-				zPositionSignal = 1.65
-			elseif params.mw_snapping_hoehe == 3 then
-				zPositionSignal = 2.10
-			elseif params.mw_snapping_hoehe == 4 then
-				zPositionSignal = 1.7
-			elseif params.mw_snapping_hoehe == 5 then
-				zPositionSignal = 1.7
-			end
-		end
-	end
-
 
 		if params.signaldistance_lf == 1 then
 			signalDistanceLf = 0.01
@@ -258,18 +64,6 @@ return {
 			end
 		end
 
-		if params.mw_mast == 2 then
-			if params.mw_snapping_type == 1 then
-				if params.mw_licht == 1 then
-					subconstruction.models[#subconstruction.models+1] = {
-							id = "mast_lf_6_7.mdl",
-							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf, yPosition-0.05, 0.4+zPosition+zPositionOffset2, 1 },
-						}
-				else
-				end
-			end
-		end
-
 
 		if params.mw_licht == 2 then
 			subconstruction.models[#subconstruction.models+1] = {
@@ -282,15 +76,16 @@ return {
 
 		if params.mw_licht == 1 then
 			subconstruction.models[#subconstruction.models+1] = {
-					id = "lf_"..LfValue.."_kz_"..kzNumber..""..rotationValue..".mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition, yPosition+yPositionLf-0.05, 0.5+zPosition+zPositionSignal+zPositionLf+zPositionOffset2, 1 },
+					id = "lf_" .. LfValue .. "_kz_" .. kzNumber .. "" .. rotationValue .. ".mdl",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition, yPosition+yPositionLf-0.05, zPosition+zPositionSignal+zPositionLf+zPositionOffset2, 1 },
 				}
 		elseif params.mw_licht == 2 then
 			subconstruction.models[#subconstruction.models+1] = {
-					id = "lf_"..LfValue.."_kz_"..kzNumber..""..rotationValue..".mdl",
+					id = "lf_" .. LfValue .. "_kz_" .. kzNumber .. "" .. rotationValue .. ".mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf, yPosition+2.1, 0.39, 1 },
 				}
 		end
+
 
 		if params.mw_pfr == 2 then
 			if params.mw_pfl == 1 then
@@ -306,6 +101,7 @@ return {
 			end
 		end
 
+
 		if params.mw_pfl == 2 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "pfeil_li.mdl",
@@ -313,22 +109,30 @@ return {
 				}
 		end
 
+
+        if params.mw_mast == 2 then
+            subconstruction.models[#subconstruction.models+1] = {
+			    id = "mast_lf_6_7.mdl",
+			    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition, yPosition-0.05, zPosition+zPositionOffset2, 1 },
+		    }
+        end
+
         subconstruction.terrainAlignmentLists = {
-         {
-            type = "EQUAL",
-      		faces =  { }
+            {
+                type = "EQUAL",
+      		    faces =  { }
 			}
 		}
 
-      result.snapPoint = {
-          transportModes = { "TRAIN", "ELECTRIC_TRAIN" },
-          allowSnapToBaseEdgeEnds = true,
-          allowSnapToMesh = true,
-      }
+        result.snapPoint = {
+            transportModes = { "TRAIN", "ELECTRIC_TRAIN" },
+            allowSnapToBaseEdgeEnds = true,
+            allowSnapToMesh = true,
+        }
 
-      result.subconstructions = {
-	      subconstruction
-      }
+        result.subconstructions = {
+	        subconstruction
+        }
 
 		return result
 	end
