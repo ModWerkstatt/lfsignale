@@ -45,23 +45,23 @@ return {
 
 	params = {
 		{
-			key = "sign_type",
+			key = "mw_sign_type",
 			name = _("Lf-Signal"),
 			uiType = "IconButton",
-			values = { "icons//lfsignale/lf1.tga", "icons//lfsignale/lf2.tga", "icons//lfsignale/lf3.tga", "icons//lfsignale/bausperre_rund.tga", "icons//lfsignale/bausperre_eckig.tga",},
+			values = { "icons/lfsignale/lf1.tga", "icons/lfsignale/lf2.tga", "icons/lfsignale/lf3.tga", "icons/lfsignale/bausperre_rund.tga", "icons/lfsignale/bausperre_eckig.tga",},
 			defaultIndex = 1,
 			tooltip = _("tooltip_lf1_signal"),
 		},
 		{
-			key = "signal_position",
+			key = "mw_signal_position",
 			name = _("Standort"),
 			values = { _("rechts"), _("links") },
-         displayMode = "Horizontal",
+            displayMode = "Horizontal",
 			defaultIndex = 1,
 			tooltip = _("tooltip_position"),
 		},
 		{
-			key = "kennziffer_lf",
+			key = "mw_kennziffer_lf",
 			name = _("Geschwindigkeit in km/h"),
 			uiType = "ComboBox",
 			values = {  "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150", "160" },
@@ -69,15 +69,15 @@ return {
 			tooltip = _("tooltip_speed"),
 		},
 		{
-			key = "hoehe_lf1",
+			key = "mw_hoehe_lf1",
 			name = _("Höhe"),
 			values = { _("niedrig"), _("standard"), _("hoch") },
-         displayMode = "Horizontal",
+            displayMode = "Horizontal",
 			defaultIndex = 1,
 			tooltip = _("tooltip_height"),
 		},
 		{
-			key = "licht",
+			key = "mw_licht",
 			name = _("Beleuchtung"),
 			values = { _("Lampe DRG 1"), _("Lampe DRG 2"), _("moderne Lampe") },
 			defaultIndex = 3,

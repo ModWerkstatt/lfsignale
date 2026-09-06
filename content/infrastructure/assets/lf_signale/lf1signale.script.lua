@@ -1,17 +1,11 @@
-
-
 function data()
 
 return {
 	updateFn = function(captureParams, params)
-	
-		-- ﻿local vec3 = require "vec3"
-		-- local transf = require "transf"
 
 		local result = { }
 		local subconstruction = {}
 		subconstruction.models = { }
-	--	result.groundFaces = { }
 
 		local xPosition = 0
 		local zPosition = 0
@@ -26,28 +20,28 @@ return {
 		local rotationValue = 0
 		local LfValue = ""
 
-		kzNumberLf = tostring(params.kennziffer_lf * 10)
+		local kzNumberLf = tostring(params.mw_kennziffer_lf * 10)
 
 
-		if params.signal_position == 1 then
+		if params.mw_signal_position == 1 then
 			yPosition = -6.525
 			rotationValue = 180
 		end
 
 
-		if params.sign_type <= 3 then
-			if params.hoehe_lf1 == 3 then
-				if params.licht == 1 then
+		if params.mw_sign_type <= 3 then
+			if params.mw_hoehe_lf1 == 3 then
+				if params.mw_licht == 1 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "lf_lampe_drg.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1, yPosition, 0.9, 1 },
 				}
-		elseif params.licht == 2 then
+		elseif params.mw_licht == 2 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "lf_lampe_drg_2.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1, yPosition, 0.9, 1 },
 				}
-		elseif params.licht == 3 then
+		elseif params.mw_licht == 3 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "lf_lampe_modern.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1, yPosition, 0.9, 1 },
@@ -56,7 +50,7 @@ return {
 	end
 
 
-		if params.hoehe_lf1 == 1 then
+		if params.mw_hoehe_lf1 == 1 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "mast_halter_niedrig.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1, 0, 1.06, 1 },
@@ -64,13 +58,13 @@ return {
 				}
 				yPosition = -1.02
 				zPosition = -0.6
-		elseif params.hoehe_lf1 == 2 then
+		elseif params.mw_hoehe_lf1 == 2 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "mast_halter_hoch.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1, 0, 1.06, 1 },
 					--transf = transf.rotZYXTransl(transf.degToRad(rotationValue, .0, .0), vec3.new(signalDistanceLf1, 0, 1)),
 				}
-		elseif params.hoehe_lf1 == 3 then
+		elseif params.mw_hoehe_lf1 == 3 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "mast_halter_hoch_2.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1, 0, 1.06, 1 },
@@ -82,54 +76,41 @@ end
 
 
 
-		if params.sign_type == 1 then
+		if params.mw_sign_type == 1 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "lf_1_kz_" .. kzNumberLf .. ".mdl",
 					-- transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1-0.05, yPosition+3.27, 0.05+zPosition, 1 },
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1-0.0, yPosition+3.27, 0.05+zPosition, 1 },
 				}
-		elseif params.sign_type == 2 then
+		elseif params.mw_sign_type == 2 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "lf_2.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1, yPosition+3.27, 1.8+zPosition, 1 },
 				}
-		elseif params.sign_type == 3 then
+		elseif params.mw_sign_type == 3 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "lf_3.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1, yPosition+3.27, 1.8+zPosition, 1 },
 				}
-		elseif params.sign_type == 4 then
+		elseif params.mw_sign_type == 4 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "bausperre_rund.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1, 0.05, 0.5+0.4, 1 },
 				}
-		elseif params.sign_type == 5 then
+		elseif params.mw_sign_type == 5 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "bausperre_eckig.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf1, 0.05, 0.5+0.4, 1 },
 				}
 		end
 
-
-
-
---[[
-		result.groundFaces[1] = { face = { {0.01, -0.01}, { 0.01, 0.01}, {-0.01, 0.01}, {-0.01, -0.01} }, modes = { { type = "FILL", key = "::/terrain/materials/asphalt_01/asphalt_01.tmat" } } }
-
-		result.terrainAlignmentLists = {
-         {
-    			type = "EQUAL",
-    			faces =  { },
-    		},
-      }
-]]
 		subconstruction.terrainAlignmentLists = {
          {
             type = "EQUAL",
       		faces =  { }
 			}
-		}		
-		
+		}
+
       result.snapPoint = {
           transportModes = { "TRAIN", "ELECTRIC_TRAIN" },
           allowSnapToBaseEdgeEnds = true,
@@ -139,7 +120,7 @@ end
       result.subconstructions = {
 	      subconstruction
       }
-        
+
 		return result
 	end
 }
