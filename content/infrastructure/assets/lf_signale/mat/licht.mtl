@@ -1,0 +1,44 @@
+function data()
+return {
+		__version = "",
+		order = 0,
+		params = {
+			emissive_scale = {
+				fragmentProperties = {
+					{
+						emissiveScale = { 8, 8, 8, },
+						fromTime = -1,
+						toTime = -1,
+					},
+				},
+			},
+			light_receiver = {
+				fragmentProperties = {
+					{
+						isLegacyMaterial = false,
+						lightMask = 2,
+					},
+				},
+			},
+			map_emissive = {
+				fragmentSamplers = {
+					emissiveTex = {
+						fileName = "::/vehicle/tram/emissive/tex/tram_all_lights.dds",
+						type = "TWOD",
+						wrapS = "REPEAT",
+						wrapT = "REPEAT",
+					},
+				},
+			},
+			polygon_offset = {
+				fragmentProperties = {
+					{
+						factor = -1,
+						units = -1,
+					},
+				},
+			},
+		},
+		type = "EMISSIVE",
+	}
+end

@@ -1,24 +1,30 @@
 function data()
-return { 
-		boundingInfo = { 
+return {
+		boundingInfo = {
 			bbMax = { 3, 1, 2, },
 			bbMin = { -4, -1, 0, },
 		},
-		collider = { 
-			params = { 
+		collider = {
+			params = {
 				halfExtents = { 3.5, 1, 1, },
 			},
 			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.5, 0, 1, 1, },
 			type = "BOX",
 		},
 		lods = {
-			{ 
-				node = { 
+			{
+				node = {
 					children = {
-						{ 
+						{
 							materials = { "mat/mast.mtl", },
 							mesh = "msh/lf_lampe_drg_lod0.msh",
 							name = "lf_lampe_drg_lod0_1",
+							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+						},
+						{
+							materials = { "mat/licht.mtl", },
+							mesh = "msh/lf_lampe_drg_licht_lod0.msh",
+							name = "lf_lampe_drg_licht",
 							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
 						},
 					},
@@ -29,7 +35,26 @@ return {
 				visibleTo = 1500,
 			},
 		},
-		metadata = { },
+		metadata = {
+			lightSourceList = {
+				lights = {
+					{
+						color = { 1, 0.926131, 0.580392, },
+						invertMask = false,
+						lightId = "",
+						mask = 2,
+						meshId = "lf_lampe_drg_licht",
+						mode = "LIGHT",
+						radius = 1,
+						strength = 2,
+						transf = { -0.866025, -0.5, 0, 0, 0.5, -0.866025, 0, 0, 0, 0, 1, 0, 0.5, 3.53, 1.2, 1, },
+						type = "SPOT",
+						visibleFrom = -1,
+						visibleTo = -1,
+					},
+				},
+			},
+		},
 		version = 2,
 	}
 end
