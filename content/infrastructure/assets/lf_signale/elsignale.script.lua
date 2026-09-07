@@ -9,27 +9,16 @@ return {
 
 		local xPosition = 0
 		local zPosition = 0
-		local zPositionOffset1 = 0
 		local zPositionOffset2 = 0
-		local yPosition = 0
-		local yPositionEl = 0
+		local yPosition = 2.1
 		local zPositionSignal = 0
-		local signalDistanceEl = 0
+		local signalDistanceEl = 0.01
 		local versionValue = ""
 		local ElValue = ""
 
 
-		if params.signaldistanceEl == 1 then
-			signalDistanceEl = 0.01
-		elseif params.signaldistanceEl == 2 then
-			signalDistanceEl = -7.988
-		end
-
-
 		if params.mw_signal_position == 1 then
-			yPosition = 2.1
-		elseif params.mw_signal_position == 2 then
-			yPosition = -2.0
+			yPosition = -yPosition
 		end
 
 
@@ -38,9 +27,10 @@ return {
 		elseif params.mw_hoehe == 2 then
 			zPosition = 0
 		elseif params.mw_hoehe == 3 then
-			zPosition = -1.25
-		elseif params.mw_hoehe == 4 then
-			zPosition = -1.55
+			zPosition = -1.85
+        elseif params.mw_hoehe == 4 then -- Oberleitung
+            zPosition = 3.75
+            yPosition = 0
 		end
 
 
@@ -76,27 +66,27 @@ return {
 		    if params.mw_pfeil == 2 then
 			    subconstruction.models[#subconstruction.models+1] = {
 					    id = "el_pfeil_l.mdl",
-					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+0.03, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
 				    }
 		    elseif params.mw_pfeil == 3 then
 			    subconstruction.models[#subconstruction.models+1] = {
 					    id = "el_pfeil_r.mdl",
-					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition-0.03, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
 				    }
 		    elseif params.mw_pfeil == 4 then
 			    subconstruction.models[#subconstruction.models+1] = {
 					    id = "el_pfeildoppelt.mdl",
-					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
 				    }
 		    elseif params.mw_pfeil == 5 then
 			    subconstruction.models[#subconstruction.models+1] = {
 					    id = "el_pfeil_g.mdl",
-					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition, 0.5+zPosition+zPositionSignal+zPositionOffset2+0.4, 1 },
 				    }
 		    end
 			subconstruction.models[#subconstruction.models+1] = {
-					id = "el_"..ElValue..""..versionValue..".mdl",
-					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition+yPositionEl, 0.5+zPosition+zPositionSignal+zPositionOffset2, 1 },
+					id = "el_" .. ElValue .. "" .. versionValue .. ".mdl",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl-0.041+xPosition, yPosition, 0.5+zPosition+zPositionSignal+zPositionOffset2, 1 },
 				}
 	    elseif params.mw_sign_type == 11 then
 		    if params.mw_signal_position == 1 then
