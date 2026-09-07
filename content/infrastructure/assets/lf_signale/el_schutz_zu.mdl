@@ -1,14 +1,14 @@
 function data()
 return { 
 		boundingInfo = { 
-			bbMax = { 3, 1, 2, },
-			bbMin = { -4, -1, 0, },
+			bbMax = { 0.64966, 0.847716, 6.86177, },
+			bbMin = { -0.48966, -0.85723, -2.38637, },
 		},
 		collider = { 
 			params = { 
-				halfExtents = { 3.5, 1, 1, },
+				halfExtents = { 0.56966, 0.852473, 4.62407, },
 			},
-			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.5, 0, 1, 1, },
+			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.08, -0.00475696, 2.2377, 1, },
 			type = "BOX",
 		},
 		lods = {
@@ -35,7 +35,12 @@ return {
 				visibleTo = 1500,
 			},
 		},
-		metadata = { },
+		metadata = { 
+			extent = { 
+				bbMax = { 0.64966, 0.847716, 6.86177, },
+				bbMin = { -0.48966, -0.85723, -2.38637, },
+			},
+		},
 		version = 2,
 	}
 end

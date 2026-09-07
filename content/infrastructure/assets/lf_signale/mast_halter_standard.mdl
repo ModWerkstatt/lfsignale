@@ -1,21 +1,21 @@
 function data()
-return {
-		boundingInfo = {
-			bbMax = { 3, 1, 2, },
-			bbMin = { -4, -1, 0, },
+return { 
+		boundingInfo = { 
+			bbMax = { 0.0738101, 3.38791, 1.38844, },
+			bbMin = { -0.0774269, 0.680312, -1.36539, },
 		},
-		collider = {
-			params = {
-				halfExtents = { 3.5, 1, 1, },
+		collider = { 
+			params = { 
+				halfExtents = { 0.0756185, 1.3538, 1.37691, },
 			},
-			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.5, 0, 1, 1, },
+			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.0018084, 2.03411, 0.011525, 1, },
 			type = "BOX",
 		},
 		lods = {
-			{
-				node = {
+			{ 
+				node = { 
 					children = {
-						{
+						{ 
 							materials = { "mat/mast.mtl", },
 							mesh = "msh/lf_halter_standard_lod0.msh",
 							name = "lf_halter_standard_lod0_1",
@@ -29,7 +29,12 @@ return {
 				visibleTo = 1500,
 			},
 		},
-		metadata = { },
+		metadata = { 
+			extent = { 
+				bbMax = { 0.0738101, 3.38791, 1.38844, },
+				bbMin = { -0.0774269, 0.680312, -1.36539, },
+			},
+		},
 		version = 2,
 	}
 end

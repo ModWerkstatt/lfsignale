@@ -1,27 +1,27 @@
 function data()
-return {
-		boundingInfo = {
-			bbMax = { 3, 1, 2, },
-			bbMin = { -4, -1, 0, },
+return { 
+		boundingInfo = { 
+			bbMax = { 0.21769, 0.45, 3.40433, },
+			bbMin = { 0.21769, -0.45, 2.58133, },
 		},
-		collider = {
-			params = {
-				halfExtents = { 3.5, 1, 1, },
+		collider = { 
+			params = { 
+				halfExtents = { 0, 0.45, 0.4115, },
 			},
-			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.5, 0, 1, 1, },
+			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.21769, 2.38419e-07, 2.99283, 1, },
 			type = "BOX",
 		},
 		lods = {
-			{
-				node = {
+			{ 
+				node = { 
 					children = {
-						{
+						{ 
 							materials = { "mat/glas.mtl", },
 							mesh = "msh/lf_6_kz_13_licht_lod0.msh",
 							name = "lf_6_kz_13_licht_lod0_1",
 							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.2, 0, 3.13, 1, },
 						},
-						{
+						{ 
 							materials = { "mat/glas_nonemissive.mtl", },
 							mesh = "msh/lf_6_kz_13_licht_lod0.msh",
 							name = "lf_6_kz_13",
@@ -35,7 +35,12 @@ return {
 				visibleTo = 1500,
 			},
 		},
-		metadata = { },
+		metadata = { 
+			extent = { 
+				bbMax = { 0.21769, 0.45, 3.40433, },
+				bbMin = { 0.21769, -0.45, 2.58133, },
+			},
+		},
 		version = 2,
 	}
 end

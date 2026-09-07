@@ -6,8 +6,8 @@ return {
 	},
 	description = {
 		attributes = {
-			cost = { 5000, -1, },
-			maintenanceCost = { 500, -1, },
+			cost = { 500, -1, },
+			maintenanceCost = { 50, -1, },
 			noise = { 0, -1, },
 			pollution = { 0, -1, },
 		},

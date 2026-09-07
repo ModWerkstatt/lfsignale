@@ -1,21 +1,21 @@
 function data()
-return {
-		boundingInfo = {
-			bbMax = { 3, 1, 2, },
-			bbMin = { -4, -1, 0, },
+return { 
+		boundingInfo = { 
+			bbMax = { 0.0309883, 0.0409887, 2.19092, },
+			bbMin = { -0.0509883, -0.0409883, -2.47064, },
 		},
-		collider = {
-			params = {
-				halfExtents = { 3.5, 1, 1, },
+		collider = { 
+			params = { 
+				halfExtents = { 0.0409883, 0.0409885, 2.33078, },
 			},
-			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.5, 0, 1, 1, },
+			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.01, 1.95578e-07, -0.139863, 1, },
 			type = "BOX",
 		},
 		lods = {
-			{
-				node = {
+			{ 
+				node = { 
 					children = {
-						{
+						{ 
 							materials = { "mw_signalkomponenten::/infrastructure/signal/mw_signalkomponenten/mat/signaltafel.mtl", },
 							mesh = "mw_signalkomponenten::/infrastructure/signal/mw_signalkomponenten/msh/pfosten_lang_lod0.msh",
 							name = "Mast",
@@ -29,7 +29,12 @@ return {
 				visibleTo = 1500,
 			},
 		},
-		metadata = { },
+		metadata = { 
+			extent = { 
+				bbMax = { 0.0309883, 0.0409887, 2.19092, },
+				bbMin = { -0.0509883, -0.0409883, -2.47064, },
+			},
+		},
 		version = 2,
 	}
 end
