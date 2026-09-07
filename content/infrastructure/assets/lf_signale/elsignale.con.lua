@@ -79,7 +79,7 @@ return {
 		{
 			key = "mw_hoehe",
 			name = _("Hoehe"),
-			values = { _("hoch"), _("standard"), _("gleishöhe"), _("oberleitung") },
+			values = { _("gleishöhe"), _("standard"), _("hoch"), _("oberleitung") },
 			defaultIndex = 2,
 			tooltip = _("tooltip_height"),
 		},

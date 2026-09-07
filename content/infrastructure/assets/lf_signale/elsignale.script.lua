@@ -23,11 +23,11 @@ return {
 
 
 		if params.mw_hoehe == 1 then
-			zPosition = 0.4
+			zPosition = -1.85
 		elseif params.mw_hoehe == 2 then
 			zPosition = 0
 		elseif params.mw_hoehe == 3 then
-			zPosition = -1.85
+			zPosition = 0.4
         elseif params.mw_hoehe == 4 then -- Oberleitung
             zPosition = 3.75
             yPosition = 0
