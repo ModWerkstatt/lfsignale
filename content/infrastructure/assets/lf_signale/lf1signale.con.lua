@@ -84,7 +84,7 @@ return {
 		},
 		{
 			key = "mw_hoehe_lf1",
-			name = _("Höhe"),
+			name = _("Hoehe"),
 			values = { _("niedrig"), _("standard"), _("hoch") },
             displayMode = "Horizontal",
 			defaultIndex = 2,

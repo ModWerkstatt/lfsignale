@@ -78,7 +78,7 @@ return {
 		},
 		{
 			key = "mw_hoehe",
-			name = _("Höhe"),
+			name = _("Hoehe"),
 			values = { _("standard"), _("gleishöhe"), _("boden") },
 			defaultIndex = 1,
 			tooltip = _("tooltip_height"),
