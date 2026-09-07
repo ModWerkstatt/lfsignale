@@ -17,7 +17,7 @@ return {
 					children = {
 						{
 							materials = { "mw_signalkomponenten::/infrastructure/signal/mw_signalkomponenten/mat/signaltafel.mtl", },
-							mesh = "msh/pfosten_lod0.msh",
+							mesh = "mw_signalkomponenten::/infrastructure/signal/mw_signalkomponenten/msh/pfosten_lang_lod0.msh",
 							name = "Mast",
 							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.01, 0, 0.1, 1, },
 						},
