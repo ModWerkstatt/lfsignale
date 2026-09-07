@@ -6,7 +6,7 @@ return {
 			emissive_scale = {
 				fragmentProperties = {
 					{
-						emissiveScale = { 8, 8, 8, },
+						emissiveScale = { 3, 3, 3, },
 						fromTime = -1,
 						toTime = -1,
 					},

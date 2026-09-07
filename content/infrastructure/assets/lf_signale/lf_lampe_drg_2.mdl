@@ -39,6 +39,7 @@ return {
 			lightSourceList = { 
 				lights = {
 					{ 
+						angleMax = 40,
 						color = { 1, 0.926131, 0.580392, },
 						invertMask = false,
 						lightId = "",
@@ -46,7 +47,7 @@ return {
 						meshId = "lf_lampe2_licht",
 						mode = "LIGHT",
 						radius = 1,
-						strength = 1,
+						strength = 2,
 						transf = { -0.866025, -0.5, 0, 0, 0.5, -0.866025, 0, 0, 0, 0, 1, 0, 0.65, 3.6, 2.02, 1, },
 						type = "SPOT",
 						visibleFrom = -1,

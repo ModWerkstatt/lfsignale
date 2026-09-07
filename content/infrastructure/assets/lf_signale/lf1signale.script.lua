@@ -7,56 +7,66 @@ return {
 		local subconstruction = {}
 		subconstruction.models = { }
 
-		local xPosition = 0
 		local yPosition = 2.2125
 		local zPosition = 0
 		local kzNumberLf = tostring(params.mw_kennziffer_lf * 10)
+        local scaleValue = 1
+
 
 		if params.mw_signal_position == 1 then
-			yPosition = -yPosition
+            scaleValue = scaleValue * -1
 		end
 
 
 		if params.mw_sign_type <= 3 then
-			if params.mw_hoehe_lf1 == 3 then
-				if params.mw_licht == 2 then
-			        subconstruction.models[#subconstruction.models+1] = {
-					    id = "lf_lampe_drg.mdl",
-					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, yPosition, 0.9, 1 },
-				    }
-		        elseif params.mw_licht == 3 then
-			        subconstruction.models[#subconstruction.models+1] = {
-			            id = "lf_lampe_drg_2.mdl",
-			            transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, yPosition, 0.9, 1 },
-		            }
-		        elseif params.mw_licht == 4 then
-			        subconstruction.models[#subconstruction.models+1] = {
-				        id = "lf_lampe_modern.mdl",
-				        transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, yPosition, 0.9, 1 },
-			        }
-		        end
-	        end
-
-
 		    if params.mw_hoehe_lf1 == 1 then
 			    subconstruction.models[#subconstruction.models+1] = {
 				    id = "mast_halter_niedrig.mdl",
-				    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.04, 0, 1 },
+				    transf = { scaleValue, 0, 0, 0, 0, scaleValue, 0, 0, 0, 0, 1, 0, 0, -0.04, 0, 1 },
 			    }
                 zPosition = -1.6
+                yPosition = 2.2125
 		    elseif params.mw_hoehe_lf1 == 2 then
 			    subconstruction.models[#subconstruction.models+1] = {
-				    id = "mast_halter_hoch.mdl",
-				    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+				    id = "mast_halter_standard.mdl",
+				    transf = { scaleValue, 0, 0, 0, 0, scaleValue, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
 			    }
+                zPosition = -1.0
+                yPosition = 3.275
 		    elseif params.mw_hoehe_lf1 == 3 then
 			    subconstruction.models[#subconstruction.models+1] = {
-				    id = "mast_halter_hoch_2.mdl",
-				    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+				    id = "mast_halter_hoch.mdl",
+				    transf = { scaleValue, 0, 0, 0, 0, scaleValue, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
 			    }
+                zPosition = -0.3
+                yPosition = 3.275
 		    end
         end
 
+
+        if params.mw_signal_position == 1 then
+			yPosition = yPosition * -1
+		end
+
+
+        if params.mw_hoehe_lf1 == 3 and params.mw_sign_type == 1 then
+			if params.mw_licht == 2 then
+		        subconstruction.models[#subconstruction.models+1] = {
+				    id = "lf_lampe_drg.mdl",
+				    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0.5, 1 },
+			    }
+	        elseif params.mw_licht == 3 then
+		        subconstruction.models[#subconstruction.models+1] = {
+		            id = "lf_lampe_drg_2.mdl",
+		            transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 1 },
+	            }
+	        elseif params.mw_licht == 4 then
+		        subconstruction.models[#subconstruction.models+1] = {
+			        id = "lf_lampe_modern.mdl",
+			        transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+		        }
+	        end
+        end
 
 
 		if params.mw_sign_type == 1 then
