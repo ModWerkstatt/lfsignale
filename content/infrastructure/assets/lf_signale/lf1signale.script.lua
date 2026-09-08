@@ -49,23 +49,35 @@ return {
 		end
 
 
-        if params.mw_hoehe_lf1 == 3 and params.mw_sign_type == 1 then
-			if params.mw_licht == 2 then
+        if params.mw_sign_type == 1 and params.mw_licht > 1 then
+			if params.mw_hoehe_lf1 == 1 then
 		        subconstruction.models[#subconstruction.models+1] = {
-				    id = "lf_lampe_drg.mdl",
-				    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0.5, 1 },
-			    }
-	        elseif params.mw_licht == 3 then
-		        subconstruction.models[#subconstruction.models+1] = {
-		            id = "lf_lampe_drg_2.mdl",
-		            transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 1 },
-	            }
-	        elseif params.mw_licht == 4 then
-		        subconstruction.models[#subconstruction.models+1] = {
-			        id = "lf_lampe_modern.mdl",
-			        transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+			        id = "mast_halter_niedrig_licht.mdl",
+			        transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, params.mw_offset_licht, 0, 0, 1 },
 		        }
-	        end
+            elseif params.mw_hoehe_lf1 == 2 then
+		        subconstruction.models[#subconstruction.models+1] = {
+			        id = "mast_halter_standard_licht.mdl",
+			        transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, params.mw_offset_licht, 0, 0, 1 },
+		        }
+            elseif params.mw_hoehe_lf1 == 3 then
+    			if params.mw_licht == 2 then
+		            subconstruction.models[#subconstruction.models+1] = {
+				        id = "lf_lampe_drg.mdl",
+				        transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0.5, 1 },
+			        }
+	            elseif params.mw_licht == 3 then
+		            subconstruction.models[#subconstruction.models+1] = {
+		                id = "lf_lampe_drg_2.mdl",
+		                transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 1 },
+	                }
+	            elseif params.mw_licht == 4 then
+		            subconstruction.models[#subconstruction.models+1] = {
+			            id = "lf_lampe_modern.mdl",
+			            transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+		            }
+	            end
+            end
         end
 
 

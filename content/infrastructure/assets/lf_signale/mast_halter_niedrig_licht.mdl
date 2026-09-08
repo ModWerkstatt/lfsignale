@@ -1,0 +1,84 @@
+function data()
+return {
+		boundingInfo = {
+			bbMax = { 0.0290828, 2.26738, 0.709533, },
+			bbMin = { -0.0290828, 0.694365, -0.201138, },
+		},
+		collider = {
+			params = {
+				halfExtents = { 0.0290828, 0.786506, 0.455335, },
+			},
+			transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.48087, 0.254197, 1, },
+			type = "BOX",
+		},
+		lods = {
+			{
+				node = {
+					children = {
+						{
+							materials = { "mat/mast.mtl", },
+							mesh = "msh/lf_halter_niedrig_lod0.msh",
+							name = "lf_halter_niedrig_lod0_1",
+							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+						},
+						{
+							materials = { "mat/mast.mtl", },
+							mesh = "msh/lf_lampe_modern_lod0.msh",
+							name = "lf_lampe_modern_lod0_1",
+							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -1.02, -0.25, 1, },
+						},
+						{
+							materials = { "mat/licht.mtl", },
+							mesh = "msh/lf_lampe_modern_licht_lod0.msh",
+							name = "lf_lampe_modern_licht",
+							transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -1.02, -0.25, 1, },
+						},
+					},
+					name = "RootNode",
+					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+				},
+				visibleFrom = 0,
+				visibleTo = 1500,
+			},
+		},
+		metadata = {
+			lightSourceList = {
+				lights = {
+					{
+						color = { 0.847059, 0.536014, 0.189343, },
+						invertMask = false,
+						lightId = "",
+						mask = 2,
+						meshId = "lf_lampe_modern_licht",
+						mode = "LIGHT",
+						radius = 1,
+						strength = 2,
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 3.42, 0.65, 1, },
+						type = "SPOT",
+						visibleFrom = -1,
+						visibleTo = -1,
+					},
+					{
+						color = { 0.847059, 0.536014, 0.189343, },
+						invertMask = false,
+						lightId = "",
+						mask = 2,
+						meshId = "lf_lampe_modern_licht",
+						mode = "LIGHT",
+						radius = 1,
+						strength = 2,
+						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 3.11, 1.1, 1, },
+						type = "SPOT",
+						visibleFrom = -1,
+						visibleTo = -1,
+					},
+				},
+			},
+			extent = {
+				bbMax = { 0.0290828, 2.26738, 0.709533, },
+				bbMin = { -0.0290828, 0.694365, -0.201138, },
+			},
+		},
+		version = 2,
+	}
+end

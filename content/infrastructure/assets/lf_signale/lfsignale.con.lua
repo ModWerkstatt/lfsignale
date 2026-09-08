@@ -64,7 +64,7 @@ return {
 			key = "mw_kennziffer",
 			name = _("Geschwindigkeit in km/h"),
 			uiType = "ComboBox",
-			values = { "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150", "160" },
+			values = { "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150", },
 			defaultIndex = 1,
 			tooltip = _("tooltip_speed"),
 		},

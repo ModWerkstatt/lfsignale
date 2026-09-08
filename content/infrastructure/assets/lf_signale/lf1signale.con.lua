@@ -71,7 +71,7 @@ return {
 			key = "mw_kennziffer_lf",
 			name = _("Geschwindigkeit in km/h"),
 			uiType = "ComboBox",
-			values = {  "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150", "160" },
+			values = {  "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150", },
 			defaultIndex = 7,
 			tooltip = _("tooltip_speed"),
             checkEnabledScript = {
@@ -97,10 +97,18 @@ return {
 			values = { _("keine"), _("Lampe DRG 1"), _("Lampe DRG 2"), _("moderne Lampe") },
 			defaultIndex = 1,
 			tooltip = _("tooltip_lighting"),
+		},
+        {
+			key = "mw_offset_licht",
+			name = _("Offset Licht"),
+			uiType = "Slider",
+            values = { _("1m"), _("2m"), _("3m"), _("4m"), _("5m"), _("6m"), _("7m"), _("8m"), _("9m"), _("10m"), _("11m"), _("12m"), _("13m"), _("14m"), _("15m"), },
+			defaultIndex = 5,
+            postConstructionModifiable = true,
             checkEnabledScript = {
-                fileName = "script/check_sign_type.script@checkEnabledFn",
+                fileName = "script/check_light_type.script@checkEnabledFn",
                 params = {
-                      key = "mw_hoehe_lf1",
+                      key = "mw_licht",
                       threshold = 3,
                 },
             },

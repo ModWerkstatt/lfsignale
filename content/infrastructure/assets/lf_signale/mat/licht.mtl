@@ -7,8 +7,6 @@ return {
 				fragmentProperties = {
 					{
 						emissiveScale = { 3, 3, 3, },
-						fromTime = -1,
-						toTime = -1,
 					},
 				},
 			},
@@ -23,7 +21,7 @@ return {
 			map_emissive = {
 				fragmentSamplers = {
 					emissiveTex = {
-						fileName = "::/vehicle/tram/emissive/tex/tram_all_lights.dds",
+						fileName = "mw_signalkomponenten::/infrastructure/signal/mw_signalkomponenten/mat/tex/railroad_lights_all_colors.dds",
 						type = "TWOD",
 						wrapS = "REPEAT",
 						wrapT = "REPEAT",
