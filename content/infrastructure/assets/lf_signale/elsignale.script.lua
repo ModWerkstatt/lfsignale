@@ -92,27 +92,27 @@ return {
 		    if params.mw_signal_position == 1 then
 			    subconstruction.models[#subconstruction.models+1] = {
 					    id = "el_schutz_offen.mdl",
-					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, 2.5, 0.5+0.4, 1 },
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, 2.5, 0.5, 1 },
 				    }
 		    else
 			    subconstruction.models[#subconstruction.models+1] = {
 					    id = "el_schutz_offen.mdl",
-					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5+0.4, 1 },
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5, 1 },
 				    }
 		    end
 	    elseif params.mw_sign_type == 12 then
 		    if params.mw_signal_position == 1 then
 			    subconstruction.models[#subconstruction.models+1] = {
 					    id = "el_schutz_zu.mdl",
-					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, 2.5, 0.5+0.4, 1 },
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, 2.5, 0.5, 1 },
 				    }
 		    else
 			    subconstruction.models[#subconstruction.models+1] = {
 					    id = "el_schutz_zu.mdl",
-					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5+0.4, 1 },
+					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5, 1 },
 				    }
 		    end
-	    elseif params.mw_sign_type == 13 then
+--[[	    elseif params.mw_sign_type == 13 then
 		    if params.mw_signal_position == 1 then
 			    subconstruction.models[#subconstruction.models+1] = {
 					    id = "el_schutz.mdl",
@@ -123,7 +123,7 @@ return {
 					    id = "el_schutz.mdl",
 					    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceEl, -2.5, 0.5+0.4, 1 },
 				    }
-		    end
+		    end ]]
 	    end
 
         if params.mw_mast == 2 then
