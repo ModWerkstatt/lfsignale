@@ -9,6 +9,7 @@ return {
 
 		local yPosition = 2.2125
 		local zPosition = 0
+        local yPositionHoch = 0
 		local kzNumberLf = tostring(params.mw_kennziffer_lf * 10)
         local scaleValue = 1
 
@@ -46,6 +47,9 @@ return {
 
         if params.mw_signal_position == 1 then
 			yPosition = yPosition * -1
+            if params.mw_hoehe_lf1 == 3 then
+                yPositionHoch = -6.55
+            end
 		end
 
 
@@ -53,12 +57,12 @@ return {
 			if params.mw_hoehe_lf1 == 1 then
 		        subconstruction.models[#subconstruction.models+1] = {
 			        id = "mast_halter_niedrig_licht.mdl",
-			        transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, params.mw_offset_licht, 0, 0, 1 },
+			        transf = { scaleValue, 0, 0, 0, 0, scaleValue, 0, 0, 0, 0, 1, 0, params.mw_offset_licht, 0, 0, 1 },
 		        }
             elseif params.mw_hoehe_lf1 == 2 then
 		        subconstruction.models[#subconstruction.models+1] = {
 			        id = "mast_halter_standard_licht.mdl",
-			        transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, params.mw_offset_licht, 0, 0, 1 },
+			        transf = { scaleValue, 0, 0, 0, 0, scaleValue, 0, 0, 0, 0, 1, 0, params.mw_offset_licht, 0, 0, 1 },
 		        }
             elseif params.mw_hoehe_lf1 == 3 then
     			if params.mw_licht == 2 then
@@ -74,7 +78,7 @@ return {
 	            elseif params.mw_licht == 4 then
 		            subconstruction.models[#subconstruction.models+1] = {
 			            id = "lf_lampe_modern.mdl",
-			            transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+			            transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, yPositionHoch, 0, 1 },
 		            }
 	            end
             end
@@ -124,7 +128,7 @@ return {
         result.subconstructions = {
 	        subconstruction
         }
-
+debugPrint(result)
 		return result
 	end
 }
