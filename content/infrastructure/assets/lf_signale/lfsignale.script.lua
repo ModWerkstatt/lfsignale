@@ -34,7 +34,7 @@ return {
 			else
 				yPosition = 0
 			end
-		elseif params.mw_signal_position == 2 then
+		elseif params.mw_signal_position == 1 then
 			if params.mw_licht == 1 then
 				yPosition = -2.05
 			else

@@ -55,8 +55,8 @@ return {
 		{
 			key = "mw_signal_position",
 			name = _("Standort"),
-			values = { _("Rechts"), _("Links") },
-			defaultIndex = 1,
+			values = { _("Links"), _("Rechts"), },
+			defaultIndex = 2,
             displayMode = "Horizontal",
 			tooltip = _("tooltip_position"),
 		},
