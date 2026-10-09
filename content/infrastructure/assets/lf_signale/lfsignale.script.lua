@@ -18,7 +18,7 @@ return {
 		local rotationValue = ""
 		local LfValue = ""
 
-		local kzNumber = tostring(params.mw_kennziffer * 10)
+		local kzNumber = tostring(params.mw_lf_kennziffer * 10)
 
 
 		if params.signaldistance_lf == 1 then
@@ -28,14 +28,14 @@ return {
 		end
 
 
-		if params.mw_signal_position == 1 then
-			if params.mw_licht == 1 then
+		if params.mw_lf_signal_position == 1 then
+			if params.mw_lf_licht == 1 then
 				yPosition = 2.15
 			else
 				yPosition = 0
 			end
-		elseif params.mw_signal_position == 1 then
-			if params.mw_licht == 1 then
+		elseif params.mw_lf_signal_position == 1 then
+			if params.mw_lf_licht == 1 then
 				yPosition = -2.05
 			else
 				yPosition = -4.2
@@ -44,16 +44,16 @@ return {
 
 
 
-		if params.mw_sign_type == 1 then
+		if params.mw_lf_sign_type == 1 then
 			LfValue = "6"
 		else
 			LfValue = "7"
 		end
 
 
-		if params.mw_sign_type == 1 then
-			if params.mw_licht == 1 then
-				if params.mw_gedreht == 1 then
+		if params.mw_lf_sign_type == 1 then
+			if params.mw_lf_licht == 1 then
+				if params.mw_lf_gedreht == 1 then
 					rotationValue = "_unten"
 				else
 					rotationValue = ""
@@ -65,7 +65,7 @@ return {
 		end
 
 
-		if params.mw_licht == 2 then
+		if params.mw_lf_licht == 2 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "mast_licht.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf, yPosition+2.1, 0.4, 1 },
@@ -74,12 +74,12 @@ return {
 
 
 
-		if params.mw_licht == 1 then
+		if params.mw_lf_licht == 1 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "lf_" .. LfValue .. "_kz_" .. kzNumber .. "" .. rotationValue .. ".mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition, yPosition+yPositionLf-0.05, zPosition+zPositionSignal+zPositionLf+zPositionOffset2, 1 },
 				}
-		elseif params.mw_licht == 2 then
+		elseif params.mw_lf_licht == 2 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "lf_" .. LfValue .. "_kz_" .. kzNumber .. "" .. rotationValue .. ".mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf, yPosition+2.1, 0.39, 1 },
@@ -87,13 +87,13 @@ return {
 		end
 
 
-		if params.mw_pfr == 2 then
-			if params.mw_pfl == 1 then
+		if params.mw_lf_pfr == 2 then
+			if params.mw_lf_pfl == 1 then
 				subconstruction.models[#subconstruction.models+1] = {
 						id = "pfeil_re.mdl",
 						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition+0.09, yPosition+yPositionLf-0.05+2.155, 0.5+zPosition+zPositionSignal+zPositionLf+zPositionOffset2+0.16, 1 },
 					}
-			elseif params.mw_pfl == 2 then
+			elseif params.mw_lf_pfl == 2 then
 				subconstruction.models[#subconstruction.models+1] = {
 						id = "pfeil_re.mdl",
 						transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition+0.09, yPosition+yPositionLf-0.05+2.155, 0.5+zPosition+zPositionSignal+zPositionLf+zPositionOffset2+0.16+0.18, 1 },
@@ -102,7 +102,7 @@ return {
 		end
 
 
-		if params.mw_pfl == 2 then
+		if params.mw_lf_pfl == 2 then
 			subconstruction.models[#subconstruction.models+1] = {
 					id = "pfeil_li.mdl",
 					transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition+0.09, yPosition+yPositionLf-0.05+2.155, 0.5+zPosition+zPositionSignal+zPositionLf+zPositionOffset2+0.16, 1 },
@@ -110,7 +110,7 @@ return {
 		end
 
 
-        if params.mw_mast == 2 then
+        if params.mw_lfe_mast == 2 then
             subconstruction.models[#subconstruction.models+1] = {
 			    id = "mast_lf_6_7.mdl",
 			    transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, signalDistanceLf+xPosition, yPosition-0.05, zPosition+zPositionOffset2, 1 },

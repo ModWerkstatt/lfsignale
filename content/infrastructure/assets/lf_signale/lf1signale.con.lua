@@ -45,7 +45,7 @@ return {
 
 	params = {
 		{
-			key = "mw_sign_type",
+			key = "mw_lf1_sign_type",
 			name = _("Lf-Signal"),
 			uiType = "IconButton",
 			values = { "icons/lfsignale/lf1.tga", "icons/lfsignale/lf2.tga", "icons/lfsignale/lf3.tga", "icons/lfsignale/bausperre_rund.tga", "icons/lfsignale/bausperre_eckig.tga",},
@@ -53,7 +53,7 @@ return {
 			tooltip = _("tooltip_lf1_signal"),
 		},
 		{
-			key = "mw_signal_position",
+			key = "mw_lf1_signal_position",
 			name = _("Standort"),
 			values = { _("links"), _("rechts"), },
             displayMode = "Horizontal",
@@ -62,13 +62,13 @@ return {
             checkEnabledScript = {
                 fileName = "script/check_sign_type_position.script@checkEnabledFn",
                 params = {
-                      key = "mw_sign_type",
+                      key = "mw_lf1_sign_type",
                       threshold = 3,
                 },
             },
 		},
 		{
-			key = "mw_kennziffer_lf",
+			key = "mw_lf1_kennziffer_lf",
 			name = _("Geschwindigkeit in km/h"),
 			uiType = "ComboBox",
 			values = {  "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150", },
@@ -77,13 +77,13 @@ return {
             checkEnabledScript = {
                 fileName = "script/check_sign_type.script@checkEnabledFn",
                 params = {
-                      key = "mw_sign_type",
+                      key = "mw_lf1_sign_type",
                       threshold = 1,
                 },
             },
 		},
 		{
-			key = "mw_hoehe_lf1",
+			key = "mw_lf1_hoehe_lf1",
 			name = _("Hoehe"),
 			values = { _("niedrig"), _("standard"), _("hoch") },
             displayMode = "Horizontal",
@@ -91,7 +91,7 @@ return {
 			tooltip = _("tooltip_height"),
 		},
 		{
-			key = "mw_licht",
+			key = "mw_lf1_licht",
 			name = _("Beleuchtung"),
 			uiType = "ComboBox",
 			values = { _("keine"), _("Lampe DRG 1"), _("Lampe DRG 2"), _("moderne Lampe") },
@@ -99,7 +99,7 @@ return {
 			tooltip = _("tooltip_lighting"),
 		},
         {
-			key = "mw_offset_licht",
+			key = "mw_lf1_offset_licht",
 			name = _("Offset Licht"),
 			uiType = "Slider",
             values = { _("1m"), _("2m"), _("3m"), _("4m"), _("5m"), _("6m"), _("7m"), _("8m"), _("9m"), _("10m"), _("11m"), _("12m"), _("13m"), _("14m"), _("15m"), },
@@ -108,7 +108,7 @@ return {
             checkEnabledScript = {
                 fileName = "script/check_light_type.script@checkEnabledFn",
                 params = {
-                      key = "mw_licht",
+                      key = "mw_lf1_licht",
                       threshold = 3,
                 },
             },
