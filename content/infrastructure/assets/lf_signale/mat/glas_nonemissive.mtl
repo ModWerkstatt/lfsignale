@@ -3,15 +3,6 @@ return {
 		__version = "",
 		order = 2,
 		params = {
-			emissive_scale = {
-				fragmentProperties = {
-					{
-						emissiveScale = { 2, 1, 1, },
-                        fromTime = 6,
-                        toTime = 20,
-					},
-				},
-			},
 			light_receiver = {
 				fragmentProperties = {
 					{
@@ -36,11 +27,10 @@ return {
 					},
 				},
 			},
-			polygon_offset = {
+			two_sided = { 
 				fragmentProperties = {
-					{
-						factor = -1,
-						units = -1,
+					{ 
+						flipNormal = false,
 					},
 				},
 			},

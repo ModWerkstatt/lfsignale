@@ -94,7 +94,7 @@ return {
 		if hasLight then            
 			subconstruction.models[#subconstruction.models+1] = {
 				id = "lf_" .. LfValue .. "_kz_" .. kzNumber .. "" .. rotationValue .. ".mdl",
-				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, yPosition, zPosition+0.39, 1 },
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.03, yPosition, zPosition+0.39, 1 },
 			}
 		else
 			subconstruction.models[#subconstruction.models+1] = {
