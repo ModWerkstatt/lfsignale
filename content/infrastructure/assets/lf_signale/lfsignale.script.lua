@@ -150,7 +150,7 @@ return {
         result.subconstructions = {
 	        subconstruction
         }
-debugPrint(result)
+
 		return result
 	end
 }
