@@ -55,7 +55,7 @@ return {
 		{
 			key = "mw_signal_position",
 			name = _("Standort"),
-			values = { _("links"), _("rechts"), },
+			values = { _("left"), _("right"), },
     		displayMode = "Horizontal",
 			defaultIndex = 2,
 			tooltip = _("tooltip_position"),
@@ -63,7 +63,7 @@ return {
 		{
 			key = "mw_mast",
 			name = _("Mast"),
-			values = { _("nein"), _("ja") },
+			values = { _("No"), _("Yes") },
 			defaultIndex = 1,
     		displayMode = "Horizontal",
 			tooltip = _("tooltip_pole"),
@@ -86,7 +86,7 @@ return {
 		{
 			key = "mw_pfeil",
 			name = _("Pfeil"),
-			values = { _("X"), _("links"), _("rechts"), _("doppelt"), _("gerade") },
+			values = { _("none"), _("left"), _("right"), _("doppelt"), _("gerade") },
 			defaultIndex = 1,
 			tooltip = _("tooltip_arrow"),
 		},

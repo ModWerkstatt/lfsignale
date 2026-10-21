@@ -1,7 +1,7 @@
 function data()
 return {
 		__version = "",
-		order = 0,
+		order = 2,
 		params = {
 			emissive_scale = {
 				fragmentProperties = {

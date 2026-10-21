@@ -94,7 +94,7 @@ return {
 			key = "mw_lf1_licht",
 			name = _("Beleuchtung"),
 			uiType = "ComboBox",
-			values = { _("keine"), _("Lampe DRG 1"), _("Lampe DRG 2"), _("moderne Lampe") },
+			values = { _("none"), _("Lampe DRG 1"), _("Lampe DRG 2"), _("moderne Lampe") },
 			defaultIndex = 1,
 			tooltip = _("tooltip_lighting"),
 		},

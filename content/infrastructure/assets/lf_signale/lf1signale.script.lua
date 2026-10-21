@@ -10,7 +10,7 @@ return {
 		local yPosition = 2.2125
 		local zPosition = 0
         local yPositionHoch = 0
-		local kzNumberLf = tostring(params.mw_lf1_kennziffer_lf * 10)
+		local kzNumberLf = params.mw_lf1_kennziffer_lf and tostring(params.mw_lf1_kennziffer_lf * 10) or "70"
         local scaleValue = 1
 
 
