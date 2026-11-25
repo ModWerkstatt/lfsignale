@@ -53,6 +53,38 @@ return {
 		end
 
 
+		if params.mw_lf1_sign_type == 1 then
+			subconstruction.models[#subconstruction.models+1] = {
+				id = "lf_1_kz_" .. kzNumberLf .. ".mdl",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.05, yPosition, zPosition, 1 },
+			}
+		elseif params.mw_lf1_sign_type == 2 then
+			subconstruction.models[#subconstruction.models+1] = {
+				id = "lf_2.mdl",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, yPosition, zPosition+1.7, 1 },
+			}
+		elseif params.mw_lf1_sign_type == 3 then
+			subconstruction.models[#subconstruction.models+1] = {
+				id = "lf_3.mdl",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, yPosition, zPosition+1.7, 1 },
+			}
+		elseif params.mw_lf1_sign_type == 4 then
+			subconstruction.models[#subconstruction.models+1] = {
+				id = "bausperre_rund.mdl",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.08, -0.2, 1 },
+			}
+		elseif params.mw_lf1_sign_type == 5 then
+			subconstruction.models[#subconstruction.models+1] = {
+				id = "bausperre_eckig.mdl",
+				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.08, -0.2, 1 },
+			}
+		end
+
+        
+        if mw_lf1_licht ~= 4 then
+            yPosition = 0
+        end
+
         if params.mw_lf1_sign_type == 1 and params.mw_lf1_licht > 1 then
 			if params.mw_lf1_hoehe_lf1 == 1 then
 		        subconstruction.models[#subconstruction.models+1] = {
@@ -84,33 +116,6 @@ return {
             end
         end
 
-
-		if params.mw_lf1_sign_type == 1 then
-			subconstruction.models[#subconstruction.models+1] = {
-				id = "lf_1_kz_" .. kzNumberLf .. ".mdl",
-				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.05, yPosition, zPosition, 1 },
-			}
-		elseif params.mw_lf1_sign_type == 2 then
-			subconstruction.models[#subconstruction.models+1] = {
-				id = "lf_2.mdl",
-				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, yPosition, zPosition+1.7, 1 },
-			}
-		elseif params.mw_lf1_sign_type == 3 then
-			subconstruction.models[#subconstruction.models+1] = {
-				id = "lf_3.mdl",
-				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, yPosition, zPosition+1.7, 1 },
-			}
-		elseif params.mw_lf1_sign_type == 4 then
-			subconstruction.models[#subconstruction.models+1] = {
-				id = "bausperre_rund.mdl",
-				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.08, -0.2, 1 },
-			}
-		elseif params.mw_lf1_sign_type == 5 then
-			subconstruction.models[#subconstruction.models+1] = {
-				id = "bausperre_eckig.mdl",
-				transf = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.08, -0.2, 1 },
-			}
-		end
 
 		subconstruction.terrainAlignmentLists = {
             {
